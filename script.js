@@ -187,6 +187,6 @@ console.log(key +'  '+ appData[key]);
 }
 
 //console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSaveMoney())
-appData.getInfoDeposit();
+//appData.getInfoDeposit();
  
 
