@@ -195,38 +195,38 @@ console.log(key +'  '+ appData[key]);
 //appData.getInfoDeposit();
  
 //Кнопку "Рассчитать" через id
-const counttt = document.getElementById('start');
+const starttt = document.getElementById('start');
 
 
 //Кнопки “+” (плюс) через Tag, каждую в своей переменной.
-const buT1 = document.getElementsByTagName('button');
+const button = document.getElementsByTagName('button');
 
 
 
 //Чекбокс по id через querySelector
-const chekBoxx = document.querySelector('#deposit-check');
+const depositCheck = document.querySelector('#deposit-check');
 
 
 //Поля для ввода возможных доходов (additional_income-item) при помощи querySelectorAll
 
-const addInk=document.querySelectorAll(".additional_income-item");
+const addIncomeitem=document.querySelectorAll(".additional_income-item");
 
 //Каждый элемент в правой части программы через класс(не через querySelector), которые имеют в имени класса "-value", начиная с class="budget_day-value" и заканчивая class="target_month-value">
-const val1 = document.getElementsByClassName("result-total budget_month-value");
-const val2 = document.getElementsByClassName("result-total budget_day-value");
-const val3 = document.getElementsByClassName("result-total expenses_month-value");
-const val4 = document.getElementsByClassName("result-total additional_income-value");
-const val5 = document.getElementsByClassName("result-total additional_expenses-value");
-const val6 = document.getElementsByClassName("result-total income_period-value");
-const val7 = document.getElementsByClassName("result-total target_month-value");
+const resTotalbudgMonth = document.getElementsByClassName("result-total budget_month-value");
+const resTotalbudgDay = document.getElementsByClassName("result-total budget_day-value");
+const resTotalexpensesMonth = document.getElementsByClassName("result-total expenses_month-value");
+const resTotaladdIncome = document.getElementsByClassName("result-total additional_income-value");
+const resTotaladdExpenses = document.getElementsByClassName("result-total additional_expenses-value");
+const resTotalincperiod = document.getElementsByClassName("result-total income_period-value");
+const resTotaltargMonth = document.getElementsByClassName("result-total target_month-value");
 
 //Оставшиеся поля через querySelector каждый в отдельную переменную:
 //поля ввода (input) с левой стороны и не забудьте про range.
-const inpUt1=document.querySelector('.salary-amount');
-const inpUt2=document.querySelector('.income-title');
-const inpUt3=document.querySelector('.income-amount');
-const inpUt4=document.querySelector('.expenses-title');
-const inpUt5=document.querySelector('.expenses-amount');
-const inpUt6=document.querySelector('.additional_expenses-item');
-const inpUt7=document.querySelector('.additional_expenses-item');
-const inpUt8=document.querySelector('.period-select');
+const inputSalary=document.querySelector('.salary-amount');
+const inputIncomeTitle=document.querySelector('.income-title');
+const inputincomeAmount=document.querySelector('.income-amount');
+const inputExpensesTitle=document.querySelector('.expenses-title');
+const inputExpensesAmount=document.querySelector('.expenses-amount');
+const inputAddexpenses=document.querySelector('.additional_expenses-item');
+const targetAmount=document.querySelector('.target-amount');
+const periodSelect=document.querySelector('.period-select');
