@@ -199,8 +199,8 @@ const starttt = document.getElementById('start');
 
 
 //Кнопки “+” (плюс) через Tag, каждую в своей переменной.
-const button = document.getElementsByTagName('button');
-
+const incomeAdd = document.getElementsByTagName('button')[0];
+const expensesAdd = document.getElementsByTagName('button')[1];
 
 
 //Чекбокс по id через querySelector
@@ -226,7 +226,16 @@ const inputSalary=document.querySelector('.salary-amount');
 const inputIncomeTitle=document.querySelector('.income-title');
 const inputincomeAmount=document.querySelector('.income-amount');
 const inputExpensesTitle=document.querySelector('.expenses-title');
+const inputExpensesTitle=document.querySelectorAll('.income-items');
+
+const expensesItems = document.querySelectorAll('.expenses-items');
+
 const inputExpensesAmount=document.querySelector('.expenses-amount');
 const inputAddexpenses=document.querySelector('.additional_expenses-item');
 const targetAmount=document.querySelector('.target-amount');
 const periodSelect=document.querySelector('.period-select');
+const periodAmount=document.querySelector('.period-amount');
+
+depositAmount = document.querySelector('.deposit-amount');
+depositPercent = document.querySelector('.deposit-percent');
+depositBank = document.querySelector('.deposit-bank');
