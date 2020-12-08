@@ -236,6 +236,6 @@ const targetAmount=document.querySelector('.target-amount');
 const periodSelect=document.querySelector('.period-select');
 const periodAmount=document.querySelector('.period-amount');
 
-depositAmount = document.querySelector('.deposit-amount');
-depositPercent = document.querySelector('.deposit-percent');
-depositBank = document.querySelector('.deposit-bank');
+const depositAmount = document.querySelector('.deposit-amount');
+const depositPercent = document.querySelector('.deposit-percent');
+const depositBank = document.querySelector('.deposit-bank');
