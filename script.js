@@ -31,6 +31,8 @@ const elemLi = document.querySelectorAll('li')
 console.log(elemLi);
 elemLi[15].after(elemLi[8]);
 elemLi[14].after(elemLi[13]);
+elemLi[9].after(elemLi[12]);
+elemLi[12].after(elemLi[14]);
 elemLi[39].before(elemLi[45]);
 elemLi[42].before(elemLi[38]);
 elemLi[44].before(elemLi[41]);
@@ -39,3 +41,6 @@ const elemUL = document.querySelectorAll('ul')
 const New8Head = document.createElement('li')
 New8Head.textContent = 'Глава 8: За пределами ES6';
 elemUL[5].append(New8Head);
+const elemLi2 = document.querySelectorAll('li')
+console.log(elemLi2);
+elemLi2[57].after(elemLi2[56]);
