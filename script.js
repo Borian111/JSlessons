@@ -26,14 +26,15 @@ let expensesItems = document.querySelectorAll('.expenses-items'); // Сумма 
 let additionalExpensesItem = document.querySelector('.additional_expenses-item'); // Возможные расходы
 let targetAmount = document.querySelector('.target-amount'); // Цель
 let periodSelect = document.querySelector('.period-select'); // Период расчета
+let periodAmount = document.querySelector('.period-amount');
+
 let depositAmount = document.querySelector('.deposit-amount'); // Сумма зепозита
 let depositPercent = document.querySelector('.deposit-percent'); // Процент депозита
 let depositBank = document.querySelector('.deposit-bank'); // Банк с депозитом
 
 let isNumber=function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n)
-}
-
+};
 
 
 
@@ -57,7 +58,15 @@ period: 0,
 
 start: function() {
     
-appData.check(); 
+ 
+
+if(salaryAmount.value ==='') {
+    start.disabled = false;
+   return; 
+ };
+
+
+
 
 appData.budget = +salaryAmount.value;
 
@@ -75,19 +84,12 @@ appData.getBudget();
 
 appData.showResult();
 appData.periodSelect();
-
+appData.calcPeriod();
 
 
 },
 
-check: function() { 
-    
-    if (salaryAmount.value.length){
-        start.disabled = false;
-    } else {
-        start.disabled = true;
-    }
-},
+
 
 
 showResult: function(){
@@ -100,6 +102,16 @@ showResult: function(){
      incomePeriodValue.value = appData.calcPeriod();
 
     },
+
+
+
+
+  periodSelect: function() {
+    console.log(periodSelect.value);
+   document.getElementsByClassName('period-amount').textContent=periodSelect.value;
+  },
+
+
 
 
 addExpensesBlock: function(){
@@ -195,21 +207,14 @@ getBudget: function(){
     return parseFloat(appData.budget+appData.incomeMonth-appData.getExpensesMonth());
 },
 
-
-
-
-
-periodSelect: function() {
-    
-    periodSelect.onclick = function() {
-        periodSelect.value = this.value;
-        console.log(this.value);
-  };
-    
-      document.getElementsByClassName('title period-amount').innerHTML =this.value;
-
-},   
+selectValue: function(){ 
+    periodAmount.textContent = periodSelect.value;
+    incomePeriodValue.value = appData.calcPeriod();
 }
+  
+
+};
+
 
 start.addEventListener('click', appData.start);
 
@@ -217,7 +222,7 @@ expensesAdd.addEventListener('click', appData.addExpensesBlock);
 
 incomeAdd.addEventListener('click', appData.addIncomesBlock);
 
-periodSelect.addEventListener('change', appData.periodSelect); 
+periodSelect.addEventListener('change', appData.selectValue); 
 
 
 
