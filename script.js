@@ -128,7 +128,7 @@ getExpenses: function() {
       let itemExpenses = item.querySelector('.expenses-title').value;
       let cashExpenses = item.querySelector('.expenses-amount').value;
       if(itemExpenses !=='' && cashExpenses !== ''){
-        this.expenses[itemExpenses] = +cashExpenses;
+        appData.expenses[itemExpenses] = +cashExpenses;
 
       }
  
@@ -154,7 +154,7 @@ getIncome: function(){
         let itemTitle = item.querySelector('.income-title').value;
         let cashItem = item.querySelector('.income-amount').value;
         if(itemTitle !=='' && cashItem !== ''){
-            this.income[itemTitle] = +cashItem;
+            appData.income[itemTitle] = +cashItem;
   
         }
    
@@ -178,7 +178,7 @@ getAddexpenses: function() {
      addExpenses.forEach(function(item){
             item=item.trim();        
            if(item !==''){
-            this.addExpenses.push(item);
+            appData.addExpenses.push(item);
            }  
 
      });
@@ -188,7 +188,7 @@ getAddIncome: function(){
     additionalIncomeItem.forEach(function(item){
         let itemValue=item.value.trim();
         if(itemValue !==''){
-            this.addIncome.push(itemValue); 
+            appData.addIncome.push(itemValue); 
         }
     });
 },
@@ -239,7 +239,7 @@ reset: function(){
 
 
     
-    //удаляем лишние строки расходов
+    //удаляем лишние строки расходов и доходов
     
         for(let i = 1; i <incomeItems.length; i++) {
             incomeItems[i].remove(); 
