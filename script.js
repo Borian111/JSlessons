@@ -89,7 +89,7 @@ start() {
      this.getinfoDeposit();
      
     
-     if(isNaN(this.percentDeposit) || this.percentDeposit < 0 || this.percentDeposit > 100 ) {
+     if(isNaN(this.percentDeposit) || this.percentDeposit < 1 || this.percentDeposit > 100 ) {
         alert('Введите корректное значение в поле проценты');
         this.start.disabled = false;
         start.style.display = 'inline-block'; //запрещаем скрывать кнопку "рассчитать"
