@@ -1,6 +1,6 @@
 'use strict'
 let income = 'фриланс';
-let mission = parseInt(20000000);
+let mission = parseInt(2000000);
 let period = 12 // число от 1 до 12 (месяцев)
 //Спрашиваем у пользователя “Ваш месячный доход?” и результат сохраняем в переменную money
 let money = prompt('Ваш месячный доход?');
@@ -36,7 +36,7 @@ function getExpensesMonth(aMount1, aMount2){
 
 //Объявить функцию getAccumulatedMonth. Функция возвращает Накопления за месяц (Доходы минус расходы)
 function getAccumulatedMonth(money, aMount1, aMount2){
-    return money*1-aMount1*1-aMount2*1;
+    return money-aMount1-aMount2;
 }
 
 //Объявить переменную accumulatedMonth и присвоить ей результат вызова функции getAccumulatedMonth 
