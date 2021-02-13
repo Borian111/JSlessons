@@ -2,21 +2,16 @@
 
 let money;
 
-//Спрашиваем у пользователя “Ваш месячный доход?” и результат сохраняем в переменную money
-
 let isNumber=function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n)
-}
+};
 
 let start = function() {
     do {
         money = prompt('Ваш месячный доход?');
     }
     while (!isNumber(money));
-
-}
-
-start();
+};
 
 let appData = {
 income: {},
@@ -48,31 +43,20 @@ asking: function(){
         appData.expenses[expenses[i]]=sum;
     }
 }
-}
-
-appData.asking();
-
+};
 
 appData.getExpensesMonth = function() {
          let summ=0;  
-    for (let key in appData.expenses){
-        
-        summ +=appData.expenses[key]
+         for (let key in appData.expenses){
+                summ +=appData.expenses[key]
             }
-           return summ;
-           
-}  
+        return summ;
+}; 
 
-//расходы за месяц
-console.log('Расходы за месяц', appData.getExpensesMonth()); 
-
-appData.budget = money;
 appData.getBudget = function(){
         return parseFloat(appData.budget-appData.getExpensesMonth());
-    }
-
-   
-//За какой период будет достигнута цель (в месяцах)      
+};
+    
 appData.getTargetMonth = function(){
         let targ=(appData.mission/appData.getBudget());
          if (targ > 0) {
@@ -80,9 +64,7 @@ appData.getTargetMonth = function(){
           }else if (targ<=0){
           сonsole.log('Цель не будет достигнута'); 
           }  
-    }
-
-appData.getTargetMonth();
+};
 
 appData.getStatusIncome = function(){
     let budgetDay = appData.getBudget()/30;
@@ -95,19 +77,16 @@ appData.getStatusIncome = function(){
         } else if (budgetDay < 0){
             console.log('Что-то пошло не так');
         }
-        }
+};
+
+start();
+appData.asking();
+appData.budget = money;
+
+console.log('Расходы за месяц', appData.getExpensesMonth()); 
+appData.getTargetMonth();
 appData.getStatusIncome();
-
 console.log('Наша программа включает в себя данные:');
-
-for (let key in appData){
-
-console.log(key +'  '+ appData[key]);
-
-}
-
-
-
-
-
-
+       for (let key in appData){
+            console.log(key +'  '+ appData[key]);
+       }
