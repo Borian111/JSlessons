@@ -1,5 +1,35 @@
 'use strict'
 
+const starttt = document.getElementById('start');//Кнопку "Рассчитать" через id
+const incomeAdd = document.getElementsByTagName('button')[0];//Кнопки “+” (плюс) через Tag
+const expensesAdd = document.getElementsByTagName('button')[1];
+const depositCheck = document.querySelector('#deposit-check');//Чекбокс по id
+//Поля для ввода возможных доходов 
+const addIncomeitem=document.querySelectorAll(".additional_income-item");
+//Каждый элемент в правой части программы 
+const resTotalbudgMonth = document.getElementsByClassName("result-total budget_month-value")[0];
+const resTotalbudgDay = document.getElementsByClassName("result-total budget_day-value")[0];
+const resTotalexpensesMonth = document.getElementsByClassName("result-total expenses_month-value")[0];
+const resTotaladdIncome = document.getElementsByClassName("result-total additional_income-value")[0];
+const resTotaladdExpenses = document.getElementsByClassName("result-total additional_expenses-value")[0];
+const resTotalincperiod = document.getElementsByClassName("result-total income_period-value")[0];
+const resTotaltargMonth = document.getElementsByClassName("result-total target_month-value")[0];
+//поля ввода (input) с левой стороны
+const inputSalary=document.querySelector('.salary-amount');
+const inputIncomeTitle=document.querySelector('.income-title');
+const inputincomeAmount=document.querySelector('.income-amount');
+const inputExpensesTitle=document.querySelector('.expenses-title');
+const inputExprnsesAmount=document.querySelectorAll('.expenses-amount');
+const expensesItems = document.querySelectorAll('.expenses-items');
+const inputExpensesAmount=document.querySelector('.expenses-amount');
+const inputAddexpenses=document.querySelector('.additional_expenses-item');
+const targetAmount=document.querySelector('.target-amount');
+const periodSelect=document.querySelector('.period-select');
+const periodAmount=document.querySelector('.period-amount');
+const depositAmount = document.querySelector('.deposit-amount');
+const depositPercent = document.querySelector('.deposit-percent');
+const depositBank = document.querySelector('.deposit-bank');
+
 let money;
 
 let isNumber=function(n) {
@@ -156,42 +186,3 @@ console.log('Наша программа включает в себя данны
        }
 
 console.log(appData.percentDeposit, appData.moneyDeposit, appData.calcSaveMoney())
- 
-
-const starttt = document.getElementById('start');//Кнопку "Рассчитать" через id
-
-const incomeAdd = document.getElementsByTagName('button')[0];//Кнопки “+” (плюс) через Tag
-const expensesAdd = document.getElementsByTagName('button')[1];
-
-const depositCheck = document.querySelector('#deposit-check');//Чекбокс по id
-
-//Поля для ввода возможных доходов 
-const addIncomeitem=document.querySelectorAll(".additional_income-item");
-
-//Каждый элемент в правой части программы 
-const resTotalbudgMonth = document.getElementsByClassName("result-total budget_month-value");
-const resTotalbudgDay = document.getElementsByClassName("result-total budget_day-value");
-const resTotalexpensesMonth = document.getElementsByClassName("result-total expenses_month-value");
-const resTotaladdIncome = document.getElementsByClassName("result-total additional_income-value");
-const resTotaladdExpenses = document.getElementsByClassName("result-total additional_expenses-value");
-const resTotalincperiod = document.getElementsByClassName("result-total income_period-value");
-const resTotaltargMonth = document.getElementsByClassName("result-total target_month-value");
-
-//поля ввода (input) с левой стороны
-const inputSalary=document.querySelector('.salary-amount');
-const inputIncomeTitle=document.querySelector('.income-title');
-const inputincomeAmount=document.querySelector('.income-amount');
-const inputExpensesTitle=document.querySelector('.expenses-title');
-const inputExpensesTitle=document.querySelectorAll('.income-items');
-
-const expensesItems = document.querySelectorAll('.expenses-items');
-
-const inputExpensesAmount=document.querySelector('.expenses-amount');
-const inputAddexpenses=document.querySelector('.additional_expenses-item');
-const targetAmount=document.querySelector('.target-amount');
-const periodSelect=document.querySelector('.period-select');
-const periodAmount=document.querySelector('.period-amount');
-
-const depositAmount = document.querySelector('.deposit-amount');
-const depositPercent = document.querySelector('.deposit-percent');
-const depositBank = document.querySelector('.deposit-bank');
