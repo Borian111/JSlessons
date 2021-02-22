@@ -51,22 +51,23 @@ moneyDeposit: 0,
 period: 0,
 
 start: function() {
-
     if(salaryAmount.value ==='') {
         start.disabled = false;
     return; 
     }
-
 appData.getExpenses();
 appData.getIncome();
 appData.getExpensesMonth();
 appData.getAddexpenses();
+appData.getIncomeMonth();
 appData.getAddIncome();
 appData.getBudget();
 appData.showResult();
 appData.periodSelect();
 appData.calcPeriod();
 },
+
+
 
 showResult: function(){
      budgetMonthValue.value = appData.budgetMonth;
@@ -119,6 +120,11 @@ getIncome: function(){
       });       
 },
 
+getIncomeMonth: function() {
+    for (let key in appData.income){
+        appData.incomeMonth += appData.income[key];
+    }      
+}, 
 addIncomesBlock: function(){  
     let cloneincomeItems = incomeItems[0].cloneNode(true);
     incomeItems[0].parentNode.insertBefore(cloneincomeItems, incomeAdd); 
