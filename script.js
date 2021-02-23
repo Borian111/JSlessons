@@ -51,10 +51,6 @@ moneyDeposit: 0,
 period: 0,
 
 start: function() {
-    if(salaryAmount.value ==='') {
-        start.disabled = false;
-    return; 
-    }
 appData.getExpenses();
 appData.getIncome();
 appData.getExpensesMonth();
@@ -173,7 +169,13 @@ selectValue: function(){
 }
 };
 
-start.addEventListener('click', appData.start);
+start.addEventListener('click', function() {
+        if(salaryAmount.value ==='') {
+            return; 
+        }else {
+            appData.start();
+        }
+});
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
 incomeAdd.addEventListener('click', appData.addIncomesBlock);
 periodSelect.addEventListener('change', appData.selectValue); 
