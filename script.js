@@ -62,10 +62,11 @@ start: function() {
  this.showResult();
  this.periodSelect();
  this.calcPeriod();
+ this.selectValue();
 },
 showResult: function(){
      budgetMonthValue.value = this.budgetMonth;
-     budgetDayValue.value = this.budgetDay;
+     budgetDayValue.value = Math.ceil(this.budgetDay);
      expensesMonthValue.value = this.expensesMonth; 
      additionalExpensesValue.value = this.addExpenses.join(', ');
      additionalIncomeValue.value = this.addIncome.join(', ');  
@@ -90,9 +91,9 @@ getExpenses: function() {
       expensesItems.forEach(function(item){
       let itemExpenses = item.querySelector('.expenses-title').value;
       let cashExpenses = item.querySelector('.expenses-amount').value;
-      if(itemExpenses !=='' && cashExpenses !== ''){
+     if(itemExpenses !=='' && cashExpenses !== ''){
        appData.expenses[itemExpenses] = +cashExpenses;
-      } 
+     } 
     });
 },
 
@@ -155,9 +156,9 @@ calcPeriod: function(){
 },
 
 getBudget: function(){
-    appData.budget = +salaryAmount.value;
-    appData.budgetMonth=+appData.budget-appData.expensesMonth+appData.incomeMonth;
-    appData.budgetDay=+appData.budgetMonth/30;
+    this.budget = +salaryAmount.value;
+    this.budgetMonth=+this.budget-this.expensesMonth+this.incomeMonth;
+    this.budgetDay=+this.budgetMonth/30;
 },
 
 selectValue: function(){ 
@@ -173,6 +174,7 @@ blockBtn: function(){//После нажатия РАССЧИТАТЬ меняе
       inputsAll.forEach(function(item) {
       item.disabled = true;
     });
+    periodSelect.disabled=false;
 },
 
 reset: function(){// после нажатия СБРОСИТЬ, всё возвращается в исходное полоджение
@@ -217,10 +219,11 @@ let bindStart = appData.start.bind(appData);
 start.addEventListener('click', function() {
 if(salaryAmount.value ==='') {
     return; 
-}else {
-    appData.start();
-} bindStart();
+}else{
+     bindStart();
+}
 });
+
 expensesAdd.addEventListener('click', appData.addExpensesBlock);
 incomeAdd.addEventListener('click', appData.addIncomesBlock);
 let bindselectValue = appData.selectValue.bind(appData);
