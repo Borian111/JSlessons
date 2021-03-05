@@ -1,6 +1,4 @@
 'use strict';
-
-
 let ourText = prompt('Необходимо ввести какой-ниюбудь текст ');
 let DomElement = function(selector, height, width, bg, fontSize) {
        this.selector = selector;
@@ -11,9 +9,7 @@ let DomElement = function(selector, height, width, bg, fontSize) {
 };
 
 DomElement.prototype.newDom = function() {
-    if(this.selector[0] === '.')   {
-        
-      
+    if(this.selector[0] === '.'){      
         let ouRdiv = document.createElement('div');
         const ourClass = this.selector.slice(1);
         console.log(ourClass);
@@ -24,11 +20,8 @@ DomElement.prototype.newDom = function() {
               ouRdiv.style.fontSize = this.fontSize;
               ouRdiv.textContent = ourText;
         document.body.appendChild(ouRdiv);
-       
 
-
-    }else if(this.selector.trim()[0] === '#'){
-      
+    }else if(this.selector.trim()[0] === '#'){      
         let ouRp = document.createElement('p');
         let ouRId = this.selector.slice(1);
              ouRp.setAttribute('id', ouRId);
@@ -37,8 +30,7 @@ DomElement.prototype.newDom = function() {
              ouRp.style.background = this.bg;
              ouRp.style.fontSize = this.fontSize;
              ouRp.textContent = ourText;
-        document.body.appendChild(ouRp);
-            
+        document.body.appendChild(ouRp);            
 }
 };
 
