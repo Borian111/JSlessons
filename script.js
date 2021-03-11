@@ -157,7 +157,7 @@ constructor(){
    }
    
    calcPeriod(){
-        return this.budgetMonth*periodSelect.value;
+        return ((this.budgetMonth+this.moneyDeposit*(this.percentDeposit/100))*periodSelect.value);
    }
    
    getBudget(){
