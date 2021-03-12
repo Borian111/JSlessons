@@ -190,7 +190,7 @@ constructor(){
    reset(){
        start.style.display = 'inline-block';
        cancel.style.display = 'none';
-       depositBank.disabled=false;
+       depositBank.disabled=false;       
        let inputsAll = document.querySelectorAll('input'); 
        inputsAll.forEach(function(item){
               item.value = "";
@@ -231,6 +231,7 @@ constructor(){
   changePercent(){
       const valueSelect = this.value;
       console.log(valueSelect);
+      depositPercent.style.display ="none";
        if (valueSelect==='other') {
           depositPercent.style.display = 'inline-block';  //появляется поле процентов
        }else{
