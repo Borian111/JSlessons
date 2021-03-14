@@ -19,6 +19,7 @@ function countTimer(deadline){
     function zeroCheq(obj) {
         for(let key in obj){ 
             if(String(obj[key]).split('').length === 1){ 
+
                 obj[key] = "0"+ obj[key];
             }
         }
@@ -30,17 +31,15 @@ function countTimer(deadline){
             timerHours.textContent = timer.hours;
             timerMinutes.textContent = timer.minutes;
             timerSeconds.textContent = timer.seconds;
-
-            if(timer.timeRemaining>0){
-                 setInterval(updateClock, 1000); 
-            }else{ 
+            console.log('tik')
+            if(timer.timeRemaining<0){                      
                 timerHours.textContent ='00';
                 timerMinutes.textContent = '00';
                 timerSeconds.textContent ='00';
             }        
-    }       
-
-updateClock();
+    }  
+    setInterval(updateClock, 1000); 
 }   
-countTimer('15 march 2021');
+
+countTimer('16 march 2021');
 });
