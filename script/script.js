@@ -381,33 +381,32 @@ const sendForm = () => {
             body[key] = val;
         });
 
-        postData(body, 
-        ()=>{
-            statusMessage.textContent = successMesage;
-            const inputs = formsAll.querySelectorAll('input'); 
-                inputs.forEach((item) => {
-                    item.value = '' 
-                })
-        }, 
-        (error) =>{ 
-            statusMessage.textContent = errorMessage;
-            console.error(error)   
-        });
+        postData(body, formsAll)
+            .then(outputData)
+            .catch(error => console.error(error));
     }
 
-    const postData = (body, outputData, errorData) =>{
-        const request = new XMLHttpRequest();
-        request.addEventListener('readystatechange', ()=>{
-           
-            if(request.readyState!==4){
-                return;
-            }
-            if (request.status===200){
-                outputData();               
-            } else {
-                errorData(request.status);                
-            }
-        })
+
+    const outputData = (form) => {
+        statusMessage.textContent = successMessage; 
+            const inputs = form.querySelectorAll('input'); 
+            inputs.forEach((item) => {
+                item.value = '' 
+            })
+    }
+
+    const postData = (body, formsAll) =>{
+        return new Promise((resolve, reject) => {
+            const request = new XMLHttpRequest();
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState !== 4) return; 
+                if(request.status === 200) { 
+                    resolve(formsAll)
+                } else { 
+                    reject(request.status)
+                }
+            });
+        })    
         request.open('POST', './server.php');
         request.setRequestHeader('Content-Type', 'application/json')
         request.send(JSON.stringify(body));
