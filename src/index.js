@@ -1,3 +1,4 @@
+'use strict'
 import countTimer from './modules/countTimer';
 import toggleMenu from './modules/toggleMenu';
 import togglePopUp from './modules/togglePopUp';
@@ -6,8 +7,8 @@ import dotsAdd from './modules/dotsAdd';
 import slider from './modules/slider';
 import changePhoto from './modules/changePhoto';
 import calc from './modules/calc';
+import validatorX from './modules/validatorX';
 import sendForm from './modules/sendForm';
-import validator from './modules/validator';
 
 countTimer('21 april 2021');
 
@@ -25,6 +26,6 @@ changePhoto();
 
 calc(100);
 
-sendForm();
+validatorX();
 
-validator();
+sendForm();

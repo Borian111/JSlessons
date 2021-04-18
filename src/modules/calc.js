@@ -36,3 +36,5 @@ const calc = (price=100) => {
         }
     });    
 };
+
+export default calc;
